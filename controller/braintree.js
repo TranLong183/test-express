@@ -10,10 +10,6 @@ var gateway = new braintree.BraintreeGateway({
 
 class brainTree {
 	ganerateToken(req, res) {
-		return res.status(200).json({
-			title: 'Express Testing',
-			message: 'The app is working properly!',
-		});
 		gateway.clientToken.generate({}, (err, response) => {
 			if (err) {
 				return res.json(err);
